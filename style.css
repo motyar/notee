@@ -1,0 +1,38 @@
+h1{
+	text-indent: -10000px;
+	margin:0;
+	height:1px;
+}
+#content{	
+	margin-left:5%;
+	margin-right:auto;
+	margin-top:20px;
+	font-family: 'Droid Serif', Cambria, Georgia, Palatino, 'Palatino Linotype', 'Myriad Pro', serif;
+	color:#333;
+	font-size:30px;
+	width:80%;
+}
+button{
+	border:none;
+	height:1px;
+	width:1px;
+	padding:0px;
+}
+
+#saved{
+	background: none repeat scroll 0 0 yellow;
+    display: none;
+    margin: 0 auto;
+    padding: 5px 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+	left:0;
+	font-family: 'Droid Serif', Cambria, Georgia, Palatino, 'Palatino Linotype', 'Myriad Pro', serif;
+	font-size:120%;
+}
+
+#saved:hover{
+	display:none;
+}

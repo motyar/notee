@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Notee | A minimal application for notes</title>
+    <meta name="author" content="Motyar">
+    <meta name="keywords" content="Notee, Application, JavaScript, Minimal, Minimalism">
+    <meta name="description" content="Notee is a minimal application for notes" >
+	<link rel="stylesheet" type="text/css" href="style.css" />
+<script src="app.js" type="text/javascript"></script>
+</head>
+<body onload="javascript:loadContent();" >
+<h1>Notee is a minimal application for notes</h1>
+<div id="content" ondblclick="javascript:editme();" onblur="javascript:saveme();" >
+Welcome to Notee<br />
+Notee is a minimal application by @motyar to keep notes<br />
+Press 'Del' to clear and get Started<br />
+</div>
+<!-- button is added just for the tab-index game. Got it? good -->
+<button onfocus="document.getElementById('saved').style.display='block';" onblur="document.getElementById('saved').style.display='none';" ></button>
+<div id="saved">Saved</div>
+</body>
+</html>
