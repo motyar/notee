@@ -24,7 +24,7 @@ function loadContent(){
     document.onmousewheel = changeColor;
 	content = document.getElementById("content");
 	if(getCookie('content')!=""){
-		content.innerHTML=getCookie('content');
+		content.innerHTML="#"+getCookie('content');
 	} else{
 		content.innerHTML = "Scroll to change Color <br /> Ctr + Scroll to change the font size";
 	}
