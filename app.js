@@ -1,5 +1,5 @@
 /*************************************************************************************************************************************
-	Author - Motyar D
+	Author - Motyar D @motyar
 	web - motyar.blogspot.com
 	chat - dharmmotyar@gmail.com
 	mail me - dharmmotyar@gmail.com
@@ -23,6 +23,7 @@ function loadContent(){
 	//for IE/OPERA etc
     document.onmousewheel = changeColor;
 	content = document.getElementById("content");
+        console.log(getCookie('content'));
 	if(getCookie('content')!=""){
 		content.innerHTML="#"+getCookie('content');
 	} else{
