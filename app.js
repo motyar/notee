@@ -5,7 +5,7 @@
 	mail me - dharmmotyar@gmail.com
 *************************************************************************************************************************************/
 var content;
-var helpText = 'You can Edit me!!<br />Auto saves to local<br />Scroll to change Color<br />Ctr +/- to change the font size';
+var helpText = 'You can Edit me!!<br />Auto saves to local<br />Scroll to change Color<br />Ctrl + or Ctrl - to change the font size';
 //function that alows editing
 function editme(){
 	content.contentEditable='true';
