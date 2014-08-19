@@ -5,6 +5,7 @@
 	mail me - dharmmotyar@gmail.com
 *************************************************************************************************************************************/
 var content;
+var helpText = 'You can Edit me!!<br />Auto saves to local<br />Scroll to change Color<br />Ctr +/- to change the font size';
 //function that alows editing
 function editme(){
 	content.contentEditable='true';
@@ -25,12 +26,12 @@ function loadContent(){
 	content = document.getElementById("content");
         console.log(getCookie('content'));
         if(getCookie('content')=="<br>"){
-		content.innerHTML = "You can edit me.";
+		content.innerHTML = helpText;
 	}else
 	if(getCookie('content')!=""){
 		content.innerHTML=getCookie('content');
 	} else {
-		content.innerHTML = "Scroll to change Color <br /> Ctr + Scroll to change the font size";
+		content.innerHTML = helpText;
 	}
 	if(getCookie('contentColor')){
 		content.style.color=getCookie('contentColor');
@@ -43,7 +44,7 @@ function clearme(){
 		setCookie('content','',365);
 	}
 	
-	content.innerHTML='You can Edit me!!<br />Auto saves to local<br />Scroll to change Color<br />Ctr +/- to change the font size<br />Ctrl+s to share';
+	content.innerHTML=helpText;
 }
 
 //fetch cookies
@@ -94,7 +95,7 @@ document.onkeydown=function(e){
     if(e.keyCode == 17) isCtrl=true;
     if(e.keyCode == 83 && isCtrl == true) {
         //run code for CTRL+S -- ie, save!
-        alert("saved");
+        //alert("saved");
         return false;
     }
 }
