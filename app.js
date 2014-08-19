@@ -24,12 +24,12 @@ function loadContent(){
     document.onmousewheel = changeColor;
 	content = document.getElementById("content");
         console.log(getCookie('content'));
+        if(getCookie('content')=="<br>"){
+		content.innerHTML = "You can edit me.";
+	}else
 	if(getCookie('content')!=""){
 		content.innerHTML=getCookie('content');
-	} else if(getCookie('content')!="<br>"){
-		content.innerHTML = "You can edit me.";
-		
-	}else{
+	} else {
 		content.innerHTML = "Scroll to change Color <br /> Ctr + Scroll to change the font size";
 	}
 	if(getCookie('contentColor')){
@@ -43,7 +43,7 @@ function clearme(){
 		setCookie('content','',365);
 	}
 	
-	content.innerHTML='Double-click to Edit me!!<br />Press \'Tab\' to Save Editing<br />Scroll to change Color<br />Ctr + Scroll to change the font size';
+	content.innerHTML='You can Edit me!!<br />Auto saves to local<br />Scroll to change Color<br />Ctr +/- to change the font size<br />Ctrl+s to share';
 }
 
 //fetch cookies
