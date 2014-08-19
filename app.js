@@ -24,9 +24,12 @@ function loadContent(){
     document.onmousewheel = changeColor;
 	content = document.getElementById("content");
         console.log(getCookie('content'));
-	if(getCookie('content')!="" || getCookie('content')!="<br>"){
+	if(getCookie('content')!=""){
 		content.innerHTML=getCookie('content');
-	} else{
+	} else if(getCookie('content')!="<br>"){
+		content.innerHTML = "You can edit me.";
+		
+	}else{
 		content.innerHTML = "Scroll to change Color <br /> Ctr + Scroll to change the font size";
 	}
 	if(getCookie('contentColor')){
@@ -79,4 +82,19 @@ function changeColor(event){
    if(randCol=='#ffffff') return false; //no white please
    content.style.color = randCol 
    setCookie('contentColor',randCol,365);
+}
+
+//Adding ctrl+s
+var isCtrl = false;
+document.onkeyup=function(e){
+    if(e.keyCode == 17) isCtrl=false;
+}
+
+document.onkeydown=function(e){
+    if(e.keyCode == 17) isCtrl=true;
+    if(e.keyCode == 83 && isCtrl == true) {
+        //run code for CTRL+S -- ie, save!
+        alert("saved");
+        return false;
+    }
 }
