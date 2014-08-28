@@ -85,6 +85,29 @@ function changeColor(event){
    setCookie('contentColor',randCol,365);
 }
 
+function save(){
+var data = {
+    "description": "posting gist test",
+    "public": true,
+    "files": {
+      "test.txt": {
+        "content": getCookie('contentColor')
+      }
+    }
+  }
+  $.ajax({
+    url: 'https://api.github.com/gists',
+    type: 'POST',
+    dataType: 'json',
+    data: JSON.stringify(data)
+  })
+  .success( function(e) {
+    console.log(e);
+  })
+  .error( function(e) {
+    console.warn("gist save error", e);
+  });
+}
 //Adding ctrl+s
 var isCtrl = false;
 document.onkeyup=function(e){
@@ -96,6 +119,7 @@ document.onkeydown=function(e){
     if(e.keyCode == 83 && isCtrl == true) {
         //run code for CTRL+S -- ie, save!
         //alert("saved");
+        save();
         return false;
     }
 }
