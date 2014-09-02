@@ -26,7 +26,7 @@ function loadContent(){
     
     //If its a saved gist
     var url = window.location.href;
-    var gistId = url.match(/[&\?]id=([\w\/-]+)/)[1];
+    //var gistId = url.match(/[&\?]id=([\w\/-]+)/)[1];
     
     if(gistId!==''){
   
