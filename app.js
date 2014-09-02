@@ -111,7 +111,7 @@ document.onkeydown=function(e){
     if(e.keyCode == 83 && isCtrl == true) {
         //run code for CTRL+S -- ie, save!
         //alert("saved");
-        save();
+        save(getCookie('content'));
         return false;
     }
 }
