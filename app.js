@@ -27,13 +27,16 @@ function loadContent(){
     //If its a saved gist
     var url = window.location.href;
     var gistId = url.match(/[&\?]id=([\w\/-]+)/)[1];
+    
+    if(gistId!==''){
   
     //get data from gist
     $.get( "https://gist.githubusercontent.com/anonymous/"+gistId+"/raw", function( data ) {
-	setCookie('content',data,365);
+//	setCookie('content',data,365);
+	content.innerHTML= data;
      });
-    
-    
+    }else{
+  
 	content = document.getElementById("content");
         console.log(getCookie('content'));
         if(getCookie('content')=="<br>"){
@@ -47,6 +50,7 @@ function loadContent(){
 	if(getCookie('contentColor')){
 		content.style.color=getCookie('contentColor');
 	}
+    }
 }
 
 //Clear the contents
