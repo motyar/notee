@@ -23,6 +23,17 @@ function loadContent(){
 	if(window.addEventListener) document.addEventListener('DOMMouseScroll', changeColor, false);
 	//for IE/OPERA etc
     document.onmousewheel = changeColor;
+    
+    //If its a saved gist
+    var url = window.location.href;
+    var gistId = url.match(/[&\?]id=([\w\/-]+)/)[1];
+    console.log(gistId);
+    //get data from gist
+    $.get( "https://gist.githubusercontent.com/anonymous/82cc59c991fd5d04f0c7/raw", function( data ) {
+	alert( "Load was performed."+data);
+     });
+    
+    
 	content = document.getElementById("content");
         console.log(getCookie('content'));
         if(getCookie('content')=="<br>"){
