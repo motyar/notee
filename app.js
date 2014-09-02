@@ -85,29 +85,29 @@ function changeColor(event){
    setCookie('contentColor',randCol,365);
 }
 
-function save(){
-var data = {
-    "description": "posting gist test",
-    "public": true,
-    "files": {
-      "test.txt": {
-        "content": getCookie('contentColor')
-      }
-    }
-  }
-  $.ajax({
+function save(text){
+    $.ajax({
     url: 'https://api.github.com/gists',
     type: 'POST',
     dataType: 'json',
-    data: JSON.stringify(data)
+    data: JSON.stringify({
+    "description": "testxx",
+    "public": true,
+    "files": {
+      "ok.txt": {
+        "content": text
+      }
+    }
+  })
   })
   .success( function(e) {
-    console.log(e);
+    console.log(e.id);
   })
   .error( function(e) {
     console.warn("gist save error", e);
-  });
+    });
 }
+
 //Adding ctrl+s
 var isCtrl = false;
 document.onkeyup=function(e){
