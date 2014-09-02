@@ -27,10 +27,10 @@ function loadContent(){
     //If its a saved gist
     var url = window.location.href;
     var gistId = url.match(/[&\?]id=([\w\/-]+)/)[1];
-    console.log(gistId);
+  
     //get data from gist
-    $.get( "https://gist.githubusercontent.com/anonymous/82cc59c991fd5d04f0c7/raw", function( data ) {
-	alert( "Load was performed."+data);
+    $.get( "https://gist.githubusercontent.com/anonymous/"+gistId+"/raw", function( data ) {
+	setCookie('content',data,365);
      });
     
     
@@ -108,6 +108,7 @@ function save(){
   })
   .success( function(e) {
     console.log(e.id);
+    alert("Saved you can share http://rawgit.com/motyar/notee/master/index.html?id="+e.id)
   })
   .error( function(e) {
     console.warn("gist save error", e);
