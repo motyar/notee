@@ -85,7 +85,10 @@ function changeColor(event){
    setCookie('contentColor',randCol,365);
 }
 
-function save(text){
+function save(){
+	
+    var text = getCookie('content');
+    console.log(text);
     $.ajax({
     url: 'https://api.github.com/gists',
     type: 'POST',
@@ -111,7 +114,7 @@ document.onkeydown=function(e){
     if(e.keyCode == 83 && isCtrl == true) {
         //run code for CTRL+S -- ie, save!
         //alert("saved");
-        save(getCookie('content'));
+        save();
         return false;
     }
 }
