@@ -90,15 +90,7 @@ function save(text){
     url: 'https://api.github.com/gists',
     type: 'POST',
     dataType: 'json',
-    data: JSON.stringify({
-    "description": "testxx",
-    "public": true,
-    "files": {
-      "ok.txt": {
-        "content": text
-      }
-    }
-  })
+    data: JSON.stringify({"description": "testxx","public": true,"files": {"ok.txt": {"content": text}}})
   })
   .success( function(e) {
     console.log(e.id);
