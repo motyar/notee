@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100');
+
 h1{
 	text-indent: -10000px;
 	margin:0;
@@ -7,7 +9,7 @@ h1{
         outline: 0;
 	margin:0 auto;
 	margin-top:10px;
-	font-family: 'Droid Serif', Cambria, Georgia, Palatino, 'Palatino Linotype', 'Myriad Pro', serif;
+	font-family: 'Roboto Mono', monospace;
 	color:#333;
 	font-size:30px;
 	width: 90%;
